@@ -23,7 +23,9 @@ module.exports = (robot) => {
 				"ts": recievedBody.ts
 			}])
 		}
-		robot.messageRoom(channel, data)
+		if (recievedBody.token == 'HinachanKyapi-') {
+			robot.messageRoom(channel, data)
+		}
 		res.end()
 	});
 }
