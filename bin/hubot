@@ -1,0 +1,8 @@
+#!/bin/sh
+
+set -e
+
+npx pnpm install --no-lockfile
+export PATH="node_modules/.bin:node_modules/hubot/node_modules/.bin:$PATH"
+
+exec node_modules/.bin/hubot --name "N3ED-Noticer" "$@"
