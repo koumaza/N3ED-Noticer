@@ -3,7 +3,7 @@
 module.exports = (robot) => {
 	robot.router.post('/hubot/webhooks', (req, res) => {
 		const channel = 'n3ed-notice'
-		const recievedBody = () => return req.body
+		const recievedBody = () => { return req.body }
 		console.info(`Recieved: ${recievedBody()}`)
 		const data = (body) => {
 			attachments: JSON.stringify([{
