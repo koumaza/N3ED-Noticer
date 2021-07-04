@@ -22,7 +22,7 @@ module.exports = (robot) => {
 				"ts": body.ts
 			}])
 		}
-		if (recievedBody.token == 'HinachanKyapi-') {
+		if (req.body.token == 'HinachanKyapi-') {
 			robot.messageRoom(channel, data(req.body))
 		}
 		res.end()
