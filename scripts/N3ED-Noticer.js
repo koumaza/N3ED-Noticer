@@ -3,27 +3,28 @@
 module.exports = (robot) => {
 	robot.router.post('/hubot/webhooks', (req, res) => {
 		const channel = 'n3ed-notice'
-		console.info(`Recieved: ${req.body}`)
-		const data = (body) => {
+		let recievedBody = req.body
+		console.info(`Recieved: ${recievedBody}`)
+		let data = {
 			attachments: JSON.stringify([{
-				"fallback": body.fallback,
-				"color": body.color,
-				"pretext": body.pretext,
-				"author_name": body.author_name,
-				"author_link": body.author_link,
-				"author_icon": body.author_icon,
-				"title": body.title,
-				"title_link": body.title_link,
-				"text": body.text,
-				"image_url": body.image_url,
-				"thumb_url": body.thumb_url,
-				"footer": body.footer,
-				"footer_icon": body.footer_icon,
-				"ts": body.ts
+				"fallback": recievedBody.fallback,
+				"color": recievedBody.color,
+				"pretext": recievedBody.pretext,
+				"author_name": recievedBody.author_name,
+				"author_link": recievedBody.author_link,
+				"author_icon": recievedBody.author_icon,
+				"title": recievedBody.title,
+				"title_link": recievedBody.title_link,
+				"text": recievedBody.text,
+				"image_url": recievedBody.image_url,
+				"thumb_url": recievedBody.thumb_url,
+				"footer": recievedBody.footer,
+				"footer_icon": recievedBody.footer_icon,
+				"ts": recievedBody.ts
 			}])
 		}
 		if (req.body.token == 'HinachanKyapi-') {
-			robot.messageRoom(channel, data(req.body))
+			robot.messageRoom(channel, data)
 		}
 		res.end()
 	});
