@@ -3,8 +3,7 @@
 module.exports = (robot) => {
 	robot.router.post('/hubot/webhooks', (req, res) => {
 		const channel = 'n3ed-notice'
-		const recievedBody = () => { return req.body }
-		console.info(`Recieved: ${recievedBody()}`)
+		console.info(`Recieved: ${req.body}`)
 		const data = (body) => {
 			attachments: JSON.stringify([{
 				"fallback": body.fallback,
@@ -24,7 +23,7 @@ module.exports = (robot) => {
 			}])
 		}
 		if (recievedBody.token == 'HinachanKyapi-') {
-			robot.messageRoom(channel, data(recievedBody()))
+			robot.messageRoom(channel, data(req.body))
 		}
 		res.end()
 	});
