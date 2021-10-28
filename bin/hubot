@@ -4,5 +4,6 @@ set -e
 
 npx pnpm install --no-lockfile
 export PATH="node_modules/.bin:node_modules/hubot/node_modules/.bin:$PATH"
+export NODE_OPTIONS=--max_old_space_size=4096
 
 exec node_modules/.bin/hubot --name "N3ED-Noticer" "$@"
