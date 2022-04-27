@@ -2,7 +2,7 @@
 // 	Webhook
 module.exports = (robot) => {
 	robot.router.post('/hubot/webhooks', (req, res) => {
-		const channel = 'n3ed-notice'
+		const channel = 'n3ed'
 		let recievedBody = req.body
 		console.info('Recieved:', recievedBody)
 		let data = {
