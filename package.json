@@ -20,6 +20,6 @@
     "hubot-slack": "slackapi/hubot-slack#main"
   },
   "engines": {
-    "node": "18.x"
+    "node": "16.x"
   }
 }
