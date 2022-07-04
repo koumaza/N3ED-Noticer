@@ -20,7 +20,9 @@ module.exports = (robot) => {
 				"thumb_url": recievedBody.thumb_url,
 				"footer": recievedBody.footer,
 				"footer_icon": recievedBody.footer_icon,
-				"ts": recievedBody.ts
+				"ts": recievedBody.ts,
+
+				"fields": receivedBody.fields
 			}])
 		}
 		if (req.body.token == process.env.WEBHOOK_TOKEN) {
