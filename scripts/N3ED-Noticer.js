@@ -2,7 +2,7 @@
 // 	Webhook
 module.exports = (robot) => {
 	robot.router.post('/hubot/webhooks', (req, res) => {
-		const channel = 'n3ed'
+		const channel = 'n3edb'
 		let recievedBody = req.body
 		console.info('Recieved:', recievedBody)
 		let data = {
@@ -23,7 +23,7 @@ module.exports = (robot) => {
 				"ts": recievedBody.ts
 			}])
 		}
-		if (req.body.token == 'HinachanKyapi-') {
+		if (req.body.token == 'konaotoshi') {
 			robot.messageRoom(channel, data)
 		}
 		res.end()
