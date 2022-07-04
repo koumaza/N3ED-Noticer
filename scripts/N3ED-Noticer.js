@@ -22,7 +22,7 @@ module.exports = (robot) => {
 				"footer_icon": recievedBody.footer_icon,
 				"ts": recievedBody.ts,
 
-				"fields": receivedBody.fields
+				"fields": recievedBody.fields
 			}])
 		}
 		if (req.body.token == process.env.WEBHOOK_TOKEN) {
